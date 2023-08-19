@@ -3,6 +3,17 @@ saludar = function(){
     let apellido = recuperarTexto('txtApellido')
     let edad = recuperarInt('txtEdad')
     let estatura = recuperarFloat('txtEstatura')
+    let mensaje = "Bienvenido "+nombre +" " + apellido
+    mostrarTexto('lblMensaje',mensaje)
+    mostrarImagen('imgSaludo','imagenes/ralf.gif')
+}
+mostrarImagen = function(idComponente,rutaImagen){
+    let componente = document.getElementById(idComponente)
+    componente.src = rutaImagen
+}
+mostrarTexto = function(idComponente,mensaje){
+    let componente = document.getElementById(idComponente)
+    componente.innerText = mensaje
 }
 recuperarTexto = function(idComponente){
     let componente;
