@@ -73,9 +73,20 @@ calcularValorTotal = function(){
                 Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.75
             Si funciona, hacer un commit
         */ 
-    
+ 
 }   
 limpiar=function(){
+    mostrarTextoEnCaja('txtProducto','')
+    mostrarTextoEnCaja('txtCantidad','0')
+    mostrarTextoEnCaja('txtPrecio','0.0')
+    mostrarTextoEnCaja('txtPorcentajeDescuento','0.0')
+    
+    mostrarTexto('lblSubtotal','0.0')
+    mostrarTexto('lblDescuento','0.0')
+    mostrarTexto('lblValorIVA','0.0')
+    mostrarTexto('lblTotal','0.0')
+    mostrarTexto('lblResumen','')
+
     /*
         Dejar todas las cajas de texto con el valor cadena vacía, 0 ó 0.0 según el tipo de dato
         Dejar todos los textos de los montos con el valor 0.0
