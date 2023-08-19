@@ -10,17 +10,17 @@ calcularValorTotal = function(){
     let valorIVA;
     let valorTotal;
     //1. Recuperar el nombre del producto como String
-    nombreProducto = document.getElementById('txtProducto')
+    nombreProducto = document.getElementById('txtProducto');
     //2. Recuperar el precio como float
-    precioProducto = parseFloat(document.getElementById('txtPrecio').value)
+    precioProducto = parseFloat(document.getElementById('txtPrecio').value);
     //3. Recuperar cantidad como int
-    cantidad = parseInt(document.getElementById('txtCantidad').value)
+    cantidad = parseInt(document.getElementById('txtCantidad').value);
     //4. Recuperar el porcentaje de descuento como int
-    porcentajeDescuento = parseInt(document.getElementById('txtPorcentajeDescuento').value)
+    porcentajeDescuento = parseInt(document.getElementById('txtPorcentajeDescuento').value);
     //4. Invocar a calcularSubtotal y el retorno guardar en la variable valorSubtotal
-    valorSubtotal = calcularSubtotal(precioProducto,cantidad)
+    valorSubtotal = calcularSubtotal(precioProducto,cantidad);
     //5. Mostrar valorSubtotal en el componente lblSubtotal
-    mostrarTexto('lblSubtotal',valorSubtotal)
+    mostrarTexto('lblSubtotal',valorSubtotal);
         /*
             Caso de prueba: 
                 precioProducto: 5.4  cantidad: 10
@@ -28,9 +28,9 @@ calcularValorTotal = function(){
             Si el caso de prueba es exitoso, hacer un commit
          */
     //6. Invocar a calcularDescuento y lo que devuelve guardar en la variable valorDescuento
-    valorDescuento =  calcularValorDescuento(valorSubtotal,porcentajeDescuento).toFixed(2)
+    valorDescuento =  calcularValorDescuento(valorSubtotal,porcentajeDescuento).toFixed(2);
     //7. Mostrar el resultado en el componente lblDescuento
-    mostrarTexto('lblDescuento',valorDescuento)
+    mostrarTexto('lblDescuento',valorDescuento);
         /*
             Caso de prueba: 
                 precioProducto: 5.4  cantidad: 10 descuento: 10
@@ -39,9 +39,9 @@ calcularValorTotal = function(){
          */
     //8. Invocar a calcularIVA y lo que devuelve guardar en la variable valorIVA
 	//   El IVA debe calcularse sobre el valor del subtotal menos el descuento
-    valorIVA = calcularIva(valorSubtotal - valorDescuento).toFixed(2)
+    valorIVA = calcularIva(valorSubtotal - valorDescuento).toFixed(2);
     //9. Mostrar el resultado en el componente lblValorIVA  
-    mostrarTexto('lblValorIVA',valorIVA)  
+    mostrarTexto('lblValorIVA',valorIVA)  ;
     /*
             Caso de prueba: 
                 precioProducto: 5.4  cantidad: 10 descuento: 10
@@ -53,10 +53,10 @@ calcularValorTotal = function(){
         */
     //10. Invocar a calcularTotal y lo que devuelve guardar en la variable valorTotal
 
-    valorTotal = calcularTotal(parseFloat(valorSubtotal),parseFloat(valorDescuento),parseFloat(valorIVA))
+    valorTotal = calcularTotal(parseFloat(valorSubtotal),parseFloat(valorDescuento),parseFloat(valorIVA));
     console.log(valorTotal);
     //11. Mostrar el resultado en el componente lblTotal
-    mostrarTexto('lblTotal',valorTotal)
+    mostrarTexto('lblTotal',valorTotal);
      /*
             Caso de prueba: 
                 precioProducto: 5.4  cantidad: 10 descuento: 10
@@ -67,7 +67,7 @@ calcularValorTotal = function(){
             Si el caso de prueba es exitoso, hacer un commit
         */
     //12. Mostrar un resumen en el componente lblResumen, si no existe debe agregarlo
-    mostrarTexto('lblResumen','Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.75')
+    mostrarTexto('lblResumen','Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.75');
         /*
             Ejemplo: 
                 Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.75
@@ -76,16 +76,16 @@ calcularValorTotal = function(){
  
 }   
 limpiar=function(){
-    mostrarTextoEnCaja('txtProducto','')
-    mostrarTextoEnCaja('txtCantidad','0')
-    mostrarTextoEnCaja('txtPrecio','0.0')
-    mostrarTextoEnCaja('txtPorcentajeDescuento','0.0')
+    mostrarTextoEnCaja('txtProducto','');
+    mostrarTextoEnCaja('txtCantidad','0');
+    mostrarTextoEnCaja('txtPrecio','0.0');
+    mostrarTextoEnCaja('txtPorcentajeDescuento','0.0');
     
-    mostrarTexto('lblSubtotal','0.0')
-    mostrarTexto('lblDescuento','0.0')
-    mostrarTexto('lblValorIVA','0.0')
-    mostrarTexto('lblTotal','0.0')
-    mostrarTexto('lblResumen','')
+    mostrarTexto('lblSubtotal','0.0');
+    mostrarTexto('lblDescuento','0.0');
+    mostrarTexto('lblValorIVA','0.0');
+    mostrarTexto('lblTotal','0.0');
+    mostrarTexto('lblResumen','');
 
     /*
         Dejar todas las cajas de texto con el valor cadena vacía, 0 ó 0.0 según el tipo de dato
