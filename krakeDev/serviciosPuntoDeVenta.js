@@ -8,6 +8,6 @@ calcularSubtotal = function(precio, cantidad){
     return precio * cantidad
 }
 calcularTotal =function(subtotal, descuento, iva){
-    return subtotal + descuento + iva
+    return subtotal - descuento + iva
 }
 

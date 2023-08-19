@@ -52,7 +52,9 @@ calcularValorTotal = function(){
             Si el caso de prueba es exitoso, hacer un commit
         */
     //10. Invocar a calcularTotal y lo que devuelve guardar en la variable valorTotal
-    valorTotal = calcularTotal(valorSubtotal,valorDescuento,valorIVA).toFixed(2)
+
+    valorTotal = calcularTotal(parseFloat(valorSubtotal),parseFloat(valorDescuento),parseFloat(valorIVA))
+    console.log(valorTotal);
     //11. Mostrar el resultado en el componente lblTotal
     mostrarTexto('lblTotal',valorTotal)
      /*
@@ -65,6 +67,7 @@ calcularValorTotal = function(){
             Si el caso de prueba es exitoso, hacer un commit
         */
     //12. Mostrar un resumen en el componente lblResumen, si no existe debe agregarlo
+    mostrarTexto('lblResumen','Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.75')
         /*
             Ejemplo: 
                 Valor a pagar por 20 cerveza corona con 10% de descuento: USD 48.75
