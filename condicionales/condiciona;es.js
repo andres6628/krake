@@ -2,22 +2,22 @@ calcularTasaInteres = function (ingresoAnual) {
     let tasa = 0;
 
     if (ingresoAnual < 300000) {
-        tasa = 16;
+        tasa = ingresoAnual*16/100;
         return tasa;
     } else {
         if (ingresoAnual >= 300000 && ingresoAnual < 500000) {
-            tasa = 15;
+            tasa = ingresoAnual * 15/100;
             return tasa;
         } else {
             if (ingresoAnual >= 500000 && ingresoAnual < 1000000) {
-                tasa = 14;
+                tasa = ingresoAnual * 14/100;
                 return tasa;
             } else {
                 if (ingresoAnual >= 1000000 && ingresoAnual < 2000000) {
-                    tasa = 13;
+                    tasa = ingresoAnual * 13/100;
                     return tasa;
                 } else {
-                    tasa = 12;
+                    tasa = ingresoAnual * 12/100;
                     return tasa;
                 }
             }
