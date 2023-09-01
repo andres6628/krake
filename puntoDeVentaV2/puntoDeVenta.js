@@ -95,13 +95,17 @@ limpiar = function () {
     mostrarTextoEnCaja('txtProducto', '');
     mostrarTextoEnCaja('txtCantidad', '0');
     mostrarTextoEnCaja('txtPrecio', '0.0');
-    mostrarTextoEnCaja('txtPorcentajeDescuento', '0.0');
+    //mostrarTextoEnCaja('txtPorcentajeDescuento', '0.0');
 
     mostrarTexto('lblSubtotal', '0.0');
     mostrarTexto('lblDescuento', '0.0');
     mostrarTexto('lblValorIVA', '0.0');
     mostrarTexto('lblTotal', '0.0');
     mostrarTexto('lblResumen', '');
+
+    mostrarTexto('lblError1','');
+    mostrarTexto('lblError2','');
+    mostrarTexto('lblError2','');
 
     /*
         Dejar todas las cajas de texto con el valor cadena vacía, 0 ó 0.0 según el tipo de dato
