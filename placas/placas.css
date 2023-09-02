@@ -1,0 +1,88 @@
+body {
+    background-color: whitesmoke;
+    font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.contenedor {
+    background-color: rgb(37, 170, 223);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    margin-left: 25px;
+    margin-right: 25px;
+    padding: 10px;
+}
+
+.areaDatos {
+    background-color: rgba(245, 245, 245);
+    border-radius: 10px;
+    display: flex;
+    flex-direction: row;
+    padding-left: 5px;
+    padding-right: 5px;
+    padding-bottom: 10px;
+    justify-content: left;
+    
+}
+
+.titulo {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 20px;
+    font-size: 30px;
+}
+
+.label {
+    font-size: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-end;
+    margin-right: 20px;
+}
+.form {
+    display: flex;
+    flex-direction: column;
+    margin-top: 50px;
+    justify-content: center;
+}
+.cajaTexto {
+    border-radius: 5px;
+    border-color: rgb(37, 170, 223);
+    font-size: 20px;
+    justify-content: left;
+}
+.boton{
+    border-radius: 5px;
+    display: flex;
+    background-color: rgb(37, 170, 223);
+    color: whitesmoke;
+    justify-content: center;
+    padding: 5px;
+    border: rgb(37, 170, 223);
+    margin-top: 10px;
+    width: 100px;
+    border: 2px solid;
+}
+.boton:hover {
+    background-color:whitesmoke;
+    color: rgb(37, 170, 223);
+    border:2px;
+    border-color: rgb(37, 170, 223);
+    border-radius: 5px;
+    width: 100px;
+    border: 2px solid rgb(37, 170, 223);
+}
+.areaError{
+    display: flex;
+    flex:1;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+    border-radius: 10px;
+    margin-left: 50px;
+    margin-right: 50px;
+    padding: 8px;
+}
