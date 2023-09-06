@@ -11,6 +11,8 @@ generarAleatorios = function(){
             aleatorios.push(aleatorio);
             console.log('valor indice ' + i);
         }
+    }else{
+        alert('EL NUMERO DEBE SER ENTRE 5 Y 20');
     }
     console.log('[]' + aleatorios);
     mostrarResultados(aleatorios)
