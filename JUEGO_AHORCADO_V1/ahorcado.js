@@ -30,4 +30,12 @@ guardarPalabra = function(){
     mayuscula = 0 ;
 }
 
+//PASO 2
+let letra;
+mostrarLetra = function(letra,posicion){
+    let cmpDiv = 'div'+posicion;
+    let letra = mostrarTexto(cmpDiv,letra);
+
+}
+
 
