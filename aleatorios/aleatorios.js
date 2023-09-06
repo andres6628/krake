@@ -15,7 +15,8 @@ generarAleatorios = function(){
         alert('EL NUMERO DEBE SER ENTRE 5 Y 20');
     }
     console.log('[]' + aleatorios);
-    mostrarResultados(aleatorios)
+    mostrarResultados(aleatorios);
+
 }
 mostrarResultados = function(arregloNumeros){
     let cmpTabla = document.getElementById('divTabla');
@@ -27,4 +28,17 @@ mostrarResultados = function(arregloNumeros){
     }
     contenido += "</table>";
     cmpTabla.innerHTML = contenido;
+}
+examen = function(){
+    let arr = [];
+    arr.push(1);
+    arr.push(2);
+    arr.push(3);
+    console.log(arr.length);
+    arr.push('as');
+    arr.push('w');
+    console.log(arr.length);
+    let array = [1,2,3,4,5];
+    let ultimo = array.length;
+    console.log('asd' + array[ultimo]);
 }
