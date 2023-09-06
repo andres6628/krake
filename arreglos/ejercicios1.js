@@ -17,6 +17,7 @@ probarAgregar = function(){
 }
 agregarNota = function(nota){
     notas.push(nota);
+    mostrarNotas();
 }
 calcularPromedio = function(){
     let sumaNotas = 0;
@@ -31,4 +32,24 @@ calcularPromedio = function(){
 ejecutarPromedio = function(){
     let promedio = calcularPromedio();
     mostrarTexto('txtPromedio',promedio);
+}
+generarTabla = function(){
+    let contenidoTabla = '';
+    let cmpTabla = document.getElementById('divTabla');
+
+    contenidoTabla += "<table><tr><td>UNO</td></tr></table>";
+    cmpTabla.innerHTML = contenidoTabla;
+}
+mostrarNotas = function(){
+    let cmpTabla = document.getElementById('divTabla');
+    let contenidoTabla = "<table><thead><th>NOTA</th></thead>";
+    let miNota;
+    for (let i = 0; i < notas.length; i++) {
+        miNota = notas[i];
+        contenidoTabla += "<tr><td>";
+        contenidoTabla += miNota;
+        contenidoTabla += "</td></tr>";
+    }
+    contenidoTabla += "</table>";
+    cmpTabla.innerHTML = contenidoTabla;
 }
