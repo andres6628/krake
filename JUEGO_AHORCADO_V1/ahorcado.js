@@ -38,19 +38,40 @@ mostrarLetra = function(letra,posicion){
 
 //PASO 3 
 let letrasEncontradas;
+
+let intentos = 0;
+let conincidencias = 0;
+let errores = 0;
+
 validar = function(letra){
-    for (let i = 0; i < palabraSecreta.length-1; i++) {
+    let letrasEncontrada = false;
+    for (let i = 0; i < palabraSecreta.length; i++) {
         let caracter = palabraSecreta.charAt(i);       
         if (letra == caracter) {
             mostrarLetra(letra,i);
-            letrasEncontradas += 1;         
+            letrasEncontradas += 1;
+            conincidencias += 1; 
+            letrasEncontrada = true;        
+        }else{
+            errores += 1;
+            letrasEncontrada = false;
         }
     }
+    if (letrasEncontrada == false) {
+        alert('LA LETRA NO ES PARTE DE LA PALABRA');
+    }
+    intentos += 1;
 }
 ingresarLetra = function(){
     let letra = recuperarTexto('txtLetra');
     if (esMayuscula(letra)) {
         validar(letra);
+        if (conincidencias == 5) {
+            alert('HAS GANADO');
+        }
+        if (intentos == 10) {
+            alert('HA PERDIDO');
+        }
     }else{
         alert('SOLO SE ACEPTAN MAYUSCULAS');
         }
