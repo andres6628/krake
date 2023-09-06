@@ -31,11 +31,19 @@ guardarPalabra = function(){
 }
 
 //PASO 2
-let letra;
 mostrarLetra = function(letra,posicion){
     let cmpDiv = 'div'+posicion;
     let letra = mostrarTexto(cmpDiv,letra);
-
 }
 
-
+//PASO 3 
+let letrasEncontradas;
+validar = function(letra){
+    for (let i = 0; i < palabraSecreta.length-1; i++) {
+        let caracter = palabraSecreta.charAt(i);       
+        if (letra == caracter) {
+            mostrarLetra(letra,i);
+            letrasEncontradas += 1;         
+        }
+    }
+}
