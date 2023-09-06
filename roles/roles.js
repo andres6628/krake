@@ -11,6 +11,12 @@ mostrarOpcionEmpleado = function () {
     ocultarComponente('divResumen'); 
     mostrarEmpleados(); 
 
+    //deshabilitar
+    deshabilitarComponente('txtNombre');
+    deshabilitarComponente('txtApellido');
+    deshabilitarComponente('txtSueldo');
+    deshabilitarComponente('txtCedula');
+    deshabilitarComponente('btnGuardar');
 }
 mostrarOpcionRol = function(){
     mostrarComponente('divRol');
@@ -34,6 +40,21 @@ mostrarEmpleados = function(){
     });
     tabla +="</tbody></table>";
     cmpTabla.innerHTML = tabla;
+
+}
+
+//PARTE 3
+let esNuevo = false;
+ejecutarNuevo = function(){
+    habilitarComponente('txtNombre');
+    habilitarComponente('txtApellido');
+    habilitarComponente('txtSueldo');
+    habilitarComponente('txtCedula');
+    habilitarComponente('btnGuardar');
+
+    esNuevo = true;
+
+
 
 }
 
