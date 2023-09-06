@@ -52,13 +52,14 @@ validar = function(letra){
             letrasEncontradas += 1;
             conincidencias += 1; 
             letrasEncontrada = true;        
-        }else{
-            errores += 1;
-            letrasEncontrada = false;
         }
     }
     if (letrasEncontrada == false) {
         alert('LA LETRA NO ES PARTE DE LA PALABRA');
+        errores += 1;
+        mostrarAhorcado();
+
+
     }
     intentos += 1;
 }
@@ -67,10 +68,10 @@ ingresarLetra = function(){
     if (esMayuscula(letra)) {
         validar(letra);
         if (conincidencias == 5) {
-            alert('HAS GANADO');
+            mostrarImagen('ahorcadoImagen','ganador.gif');
         }
         if (intentos == 10) {
-            alert('HA PERDIDO');
+            mostrarImagen('ahorcadoImagen','gameOver.gif');        
         }
     }else{
         alert('SOLO SE ACEPTAN MAYUSCULAS');
