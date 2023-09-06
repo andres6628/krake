@@ -97,6 +97,9 @@ tbody tr:nth-child(odd) {
   td{
     text-align: center;
   }
+  thead{
+    color: white;
+  }
   .areaTabla{
     margin-top: 20px;
   }
