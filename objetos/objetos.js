@@ -39,3 +39,50 @@ crearProducto = function () {
         }
     }
 }
+modificarAtributos = function(){
+    let cuenta = {
+        numero: "12345",
+        saldo: 0.0
+    }
+    cuenta.saldo = 100;
+    cuenta.saldo += 10;
+    console.log(cuenta.saldo);
+}
+crearCliente = function() {
+    let cliente = {
+        cedula: "123456",
+        nombre: "Andres"
+    }
+    let cliente1 = {}
+    cliente1.nombre = "Pedro";
+    cliente1.apellido = "Ortiz";
+    cliente1.cedula = "0000000"
+}
+probarIncrementarSaldo = function(){
+    let cta = { numero:"1234", saldo:34.0}
+    incrementarSaldo(cta,100);
+    console.log(cta.saldo);
+}
+probarDeterminarMayor =function(){
+    let persona1 = {nombre:"Daniel", edad: 45};
+    let persona2 = {nombre:"Maria", edad:25};
+    let mayor = determinarMayor(persona1,persona2);
+    if (mayor != null) {
+        console.log('El mayor es '+mayor.nombre);
+    }
+}
+incrementarSaldo = function(cuenta,monto){
+    cuenta.saldo += monto;
+}
+determinarMayor = function(persona1, persona2){
+    if(persona1.edad > persona2.edad){
+        return persona1;
+    }else{
+        if (persona1.edad < persona2.edad) {
+            return persona2;
+        } else {
+            return null;
+        }
+    }
+
+}
