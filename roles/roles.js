@@ -12,11 +12,8 @@ mostrarOpcionEmpleado = function () {
     mostrarEmpleados();
 
     //deshabilitar
-    deshabilitarComponente('txtNombre');
-    deshabilitarComponente('txtApellido');
-    deshabilitarComponente('txtSueldo');
-    deshabilitarComponente('txtCedula');
-    deshabilitarComponente('btnGuardar');
+    deshabilitarFormulario();
+
 }
 mostrarOpcionRol = function () {
     mostrarComponente('divRol');
@@ -45,12 +42,22 @@ mostrarEmpleados = function () {
 
 //PARTE 3
 let esNuevo = false;
-ejecutarNuevo = function () {
+habilitarFormulario = function(){
     habilitarComponente('txtNombre');
     habilitarComponente('txtApellido');
     habilitarComponente('txtSueldo');
     habilitarComponente('txtCedula');
     habilitarComponente('btnGuardar');
+};
+deshabilitarFormulario = function(){
+    deshabilitarComponente('txtNombre');
+    deshabilitarComponente('txtApellido');
+    deshabilitarComponente('txtSueldo');
+    deshabilitarComponente('txtCedula');
+    deshabilitarComponente('btnGuardar');
+}
+ejecutarNuevo = function () {
+    habilitarFormulario();
 
     
     esNuevo = true;
@@ -101,6 +108,7 @@ guardar = function () {
         if (validarEmpleado) {
             alert('EMPLEADO GUARDADO CORRECTAMENTE');
             mostrarEmpleados();
+            deshabilitarFormulario();
         }else{
             alert('YA EXISTE UN EMPLEADO CON LA CEDULA ' + empleado.cedula);
         }
@@ -145,7 +153,7 @@ validarSueldo = function (sueldo) {
     if (isNaN(sueldo)) {
         errores += 'Ingrese un valor válido';
     }
-    if (sueldo < 400 || sueldo >= 5000) {
+    if (sueldo < 400 || sueldo > 5000) {
         errores += 'Sueldo debe ser entre 400 y 5000';
     }
     return errores;
