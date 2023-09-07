@@ -209,3 +209,33 @@ limpiar = function(){
     cmpBusqueda.value = '';
     esNuevo = false;
 }
+
+//PARTE 5
+buscarPorRol = function(){
+    let cedula = document.getElementById('txtBusquedaCedulaRol').value;
+    let errores = validarCedula(cedula);
+    mostrarTexto('lblErrorBusqueda',errores);
+    if (errores == '') {
+        let empleado = buscarEmpleado(cedula);
+        if (empleado != null) {
+           /* let cmpCedula = document.getElementById('txtCedula');
+            cmpCedula.value = empleado.cedula;
+            let cmpNombre = document.getElementById('txtNombre');
+            cmpNombre.value = empleado.nombre;
+            let cmpApellido = document.getElementById('txtApellido');
+            cmpApellido.value = empleado.apellido;
+            let cmpSueldo = document.getElementById('txtSueldo');
+            cmpSueldo.value = empleado.sueldo;*/
+
+            mostrarTexto('infoCedula',empleado.cedula);
+            mostrarTexto('infoNombre',empleado.nombre + ' ' + empleado.apellido);
+            mostrarTexto('infoSueldo',empleado.sueldo);
+           // habilitarFormulario();
+           // deshabilitarComponente('txtCedula');
+        }else
+        {
+            alert('EL EMPLEADO NO EXISTE');
+        }
+
+    }
+}
