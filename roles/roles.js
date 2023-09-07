@@ -218,24 +218,59 @@ buscarPorRol = function(){
     if (errores == '') {
         let empleado = buscarEmpleado(cedula);
         if (empleado != null) {
-           /* let cmpCedula = document.getElementById('txtCedula');
-            cmpCedula.value = empleado.cedula;
-            let cmpNombre = document.getElementById('txtNombre');
-            cmpNombre.value = empleado.nombre;
-            let cmpApellido = document.getElementById('txtApellido');
-            cmpApellido.value = empleado.apellido;
-            let cmpSueldo = document.getElementById('txtSueldo');
-            cmpSueldo.value = empleado.sueldo;*/
-
             mostrarTexto('infoCedula',empleado.cedula);
             mostrarTexto('infoNombre',empleado.nombre + ' ' + empleado.apellido);
             mostrarTexto('infoSueldo',empleado.sueldo);
-           // habilitarFormulario();
-           // deshabilitarComponente('txtCedula');
         }else
         {
             alert('EL EMPLEADO NO EXISTE');
         }
 
     }
+}
+
+calcularAporteEmpleado = function(sueldo){
+    let aporte = sueldo * 9.45 / 100;
+    return aporte;
+}
+calcularValorAPagar = function(sueldo,aporte,descuento){
+    let sueldoTotal = sueldo - aporte - descuento;
+    return sueldoTotal;
+}
+recuperarTextoDiv = function(idComponente){
+    let cmpComponente = document.getElementById(idComponente);
+    return cmpComponente.textContent ;
+}
+recuperarIntDiv = function(idComponente){
+    let cmpComponente = document.getElementById(idComponente);
+    return  parseInt(cmpComponente.textContent) ;
+}
+recuperarFloatDiv = function(idComponente){
+    let cmpComponente = document.getElementById(idComponente);
+    return parseFloat(cmpComponente.textContent) ;
+}
+calcularRol = function(){
+    let sueldo = recuperarFloatDiv('infoSueldo') ;
+    let descuento = recuperarFloat('txtDescuentos');
+    let errores = validarDescuento(descuento);
+    mostrarTexto('lblErrorDescuentos',errores);
+    
+    if (errores == '') {
+        let aporte =  calcularAporteEmpleado(sueldo);
+        mostrarTexto('infoIESS',aporte);
+        let pago = calcularValorAPagar(sueldo,aporte,descuento);
+        mostrarTexto('infoPago',pago);
+    }
+    
+}
+validarDescuento = function (descuento) {
+    let errores = '';
+    if (descuento == '') {
+        errores += 'Campo obligatorio. ';
+    }
+    descuento = parseFloat(descuento);
+    if (isNaN(descuento)) {
+        errores += 'Ingrese un valor válido';
+    }
+    return errores;
 }
