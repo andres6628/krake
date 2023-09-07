@@ -9,7 +9,7 @@ mostrarTexto=function(idComponente,mensaje){
     componente=document.getElementById(idComponente);
     componente.innerText = mensaje;
 }
-mostrarTextoEnCaja = function(idComponente,mensaje){
+p = function(idComponente,mensaje){
     let componente;
     componente=document.getElementById(idComponente);
     componente.value = mensaje;
