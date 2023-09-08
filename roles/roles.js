@@ -19,6 +19,7 @@ mostrarOpcionRol = function () {
     mostrarComponente('divRol');
     ocultarComponente('divEmpleado');
     ocultarComponente('divResumen');
+    deshabilitarComponente('btnGuardarRol');
 }
 mostrarOpcionResumen = function () {
     mostrarComponente('divResumen');
@@ -249,6 +250,7 @@ recuperarFloatDiv = function(idComponente){
     let cmpComponente = document.getElementById(idComponente);
     return parseFloat(cmpComponente.textContent) ;
 }
+let roles = [];
 calcularRol = function(){
     let sueldo = recuperarFloatDiv('infoSueldo') ;
     let descuento = recuperarFloat('txtDescuentos');
@@ -260,6 +262,7 @@ calcularRol = function(){
         mostrarTexto('infoIESS',aporte);
         let pago = calcularValorAPagar(sueldo,aporte,descuento);
         mostrarTexto('infoPago',pago);
+        habilitarComponente('btnGuardarRol');
     }
     
 }
@@ -273,4 +276,46 @@ validarDescuento = function (descuento) {
         errores += 'Ingrese un valor válido';
     }
     return errores;
+}
+
+//PARTE 6 
+buscarRol = function(cedula){
+    for (let i = 0; i < roles.length; i++) {
+        if (roles[i].cedula == cedula) {
+            return roles[i];
+        }
+
+    }
+    return null;
+}
+agregarRol = function(rol){
+    let rolExistente = buscarRol(rol.cedula);
+    if (rolExistente == null) {
+        roles.push(rol);
+        alert('Rol creado con éxito');
+        deshabilitarComponente("btnGuardarRol");
+    }else{
+        alert('EL ROL YA EXISTE');
+    }
+
+}
+calcularAporteEmpleador = function(sueldo){
+    return sueldo * 11.5 / 100;
+}
+guardarRol = function(){
+    let cedula = recuperarTextoDiv('infoCedula');
+    let nombre = recuperarTextoDiv('infoNombre');
+    let sueldo = recuperarFloatDiv('infoSueldo');
+    let iess = recuperarFloatDiv('infoIESS');
+    let vlorAPagar = recuperarFloatDiv('infoPago');
+
+    let aporteE = calcularAporteEmpleador(sueldo);
+    let rol ={};
+    rol.cedula = cedula;
+    rol.nombre = nombre;
+    rol.sueldo = sueldo;
+    rol.valorAPagar = vlorAPagar;
+    rol.aporteEmpleado = iess;
+    rol.aporteEmpleador = aporteE;
+    agregarRol(rol);
 }
